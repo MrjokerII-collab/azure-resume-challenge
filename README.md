@@ -1,2 +1,2 @@
 # azure-resume-challenge
-My azure resume project
+azure resume project

@@ -1,0 +1,5 @@
+{
+    "database": {
+      "connectionString": "DefaultEndpointsProtocol=https;AccountName=db-one-chall;AccountKey=X1lR6u5QnL0yUBVoPJfqcZK2wCZoWIS3CXnReX8T10tnGl08P1PvgtRrVY8GU8IBOu7NxcpUXhBZACDbVcQKmQ==;TableEndpoint=https://db-one-chall.table.cosmos.azure.com:443/;"
+    }
+}

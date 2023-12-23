@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     getVisitCount();
 })
 
-const productionApiUrl = 'https://cchallresume.azurewebsites.net/api/Cchall_http_func?';
-const localApiUrl = 'http://localhost:7071/api/Cchall_http_func';
+const productionApiUrl = 'https://cchallresume.azurewebsites.net/api/API_function?';
+//const localApiUrl = 'http://localhost:7071/api/Cchall_http_func';
 
 const getVisitCount = () => {
     let count = 30;
