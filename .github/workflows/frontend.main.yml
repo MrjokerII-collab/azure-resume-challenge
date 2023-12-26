@@ -17,11 +17,13 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
+        azcliversion: latest
         inlineScript: |
             az storage blob upload-batch --account-name websitekingu --auth-mode key -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
+        azcliversion: latest
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "websitejojo" --name "staticjojoweb" --resource-group "static_website_jojo"
 
