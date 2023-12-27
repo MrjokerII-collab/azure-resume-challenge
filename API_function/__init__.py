@@ -7,7 +7,7 @@ from azure.data.tables import TableServiceClient
 from azure.data.tables import TableClient
 from azure.data.tables import UpdateMode
 
-#Ceci est un test du workflows
+#Ceci est un test du workflow
 def conn_string():
     with open('API_function/config.json', 'r') as config_file:
         config_data = json.load(config_file)
