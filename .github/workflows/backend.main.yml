@@ -3,8 +3,8 @@ name: Deploy Python project to Azure Function App
 on:
   push:
     branches: [ main ]
-    #paths:
-    #    - 'API_function/**'
+    paths:
+       - 'API_function/**'
 
 
 env:
