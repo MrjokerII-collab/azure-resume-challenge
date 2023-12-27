@@ -37,9 +37,9 @@ jobs:
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 
-
-    - name: 'Update function'
-      shell: bash
-      run: |
-        func azure functionapp publish ${{ env.FUNCTION_NAME }}
+#
+#    - name: 'Update function'
+#      shell: bash
+#      run: |
+#        func azure functionapp publish ${{ env.FUNCTION_NAME }}
 
