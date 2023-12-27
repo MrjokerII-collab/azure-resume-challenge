@@ -1,7 +1,11 @@
 name: Deploy Python project to Azure Function App
 
 on:
-  [push]
+  push:
+    branches: [ main ]
+    paths:
+        - 'API_function/**'
+
 
 env:
   AZURE_FUNCTIONAPP_NAME: 'Cchallresume'   # set this to your function app name on Azure
@@ -16,7 +20,7 @@ jobs:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
     
-#    - uses: azure/login@v1
+    - uses: azure/login@v1
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
       uses: actions/setup-python@v4
@@ -39,13 +43,19 @@ jobs:
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 
+    - name: 'Run deployment'
+      shell: bash
+      run: |
+        az functionapp deployment source config --resource-group API-chall-cloud --name Cchallresume --src API_function/
 
-    - name: 'Update function'
-      uses: azure/CLI@v1
-      with:
-        azcliversion: latest
-        inlineScript: |
-            func azure functionapp publish ${{ env.FUNCTION_NAME }}
+
+
+#    - name: 'Update function'
+#      uses: azure/CLI@v1
+#      with:
+#        azcliversion: latest
+#        inlineScript: |
+#            func azure functionapp publish ${{ env.FUNCTION_NAME }}
 
   # Azure logout
 #    - name: logout
