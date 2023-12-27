@@ -10,8 +10,8 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: 'Cchallresume'   # set this to your function app name on Azure
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'API_function'       # set this to the path to your function app project, defaults to the repository root
-  PYTHON_VERSION: '3.10'                     # set this to the python version to use (e.g. '3.6', '3.7', '3.8')
-  FUNCTION_NAME: 'Cchallresume'
+  PYTHON_VERSION: '3.10' # set this to the python version to use (e.g. '3.6', '3.7', '3.8')
+  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,7 +20,6 @@ jobs:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
     
-#    - uses: azure/login@v1
 
     - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
       uses: actions/setup-python@v4
@@ -42,6 +41,8 @@ jobs:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        scm-do-build-during-deployment: true
+        enable-oryx-build: true
 
 #    - name: 'Run deployment'
 #      shell: bash
