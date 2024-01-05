@@ -1,20 +1,15 @@
 import logging
 import uuid
 import json
+import os
 from datetime import datetime
 import azure.functions as func
 from azure.data.tables import TableServiceClient
 from azure.data.tables import TableClient
 from azure.data.tables import UpdateMode
 
-#Ceci est un test du workflows
-def conn_string():
-    with open('API_function/config.json', 'r') as config_file:
-        config_data = json.load(config_file)
-        connection_string = config_data['database']['connectionString']
-        return connection_string
 
-connection_string = conn_string()
+connection_string = os.getenv('CosmosDbConnectionString')
 table="Visitors_count"
 table_service_client = TableServiceClient.from_connection_string(conn_str=connection_string)
 connection_table = TableClient.from_connection_string(conn_str=connection_string, table_name=table)
