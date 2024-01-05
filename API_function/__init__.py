@@ -8,7 +8,7 @@ from azure.data.tables import TableServiceClient
 from azure.data.tables import TableClient
 from azure.data.tables import UpdateMode
 
-
+#connection to cosmosdb
 connection_string = os.getenv('CosmosDbConnectionString')
 table="Visitors_count"
 table_service_client = TableServiceClient.from_connection_string(conn_str=connection_string)
