@@ -136,4 +136,9 @@ __queuestorage__
 __azurite_db*__.json
 .python_packages
 
-# Github Action
+# Terraform
+*.tfstate
+*.tfplan
+.terraform/
+*.tfstate.backup
+*.hcl
