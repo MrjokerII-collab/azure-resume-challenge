@@ -2,14 +2,25 @@ import logging
 import uuid
 import json
 import os
-from datetime import datetime
 import azure.functions as func
 from azure.data.tables import TableServiceClient
 from azure.data.tables import TableClient
 from azure.data.tables import UpdateMode
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
 
 #connection to cosmosdb
-connection_string = os.getenv('CosmosDbConnectionString')
+def get_secret():
+    keyVaultName = os.getenv("KEY_VAULT_NAME")
+    KVUri = f"https://{keyVaultName}.vault.azure.net"
+    credential = DefaultAzureCredential()
+    client = SecretClient(vault_url=KVUri, credential=credential)
+    secretcreds = "Connectionstringdb"
+    retrieved_secret = client.get_secret(secretcreds)
+    connection_string = retrieved_secret.value
+    return connection_string
+
+connection_string = get_secret()
 table="Visitors_count"
 table_service_client = TableServiceClient.from_connection_string(conn_str=connection_string)
 connection_table = TableClient.from_connection_string(conn_str=connection_string, table_name=table)
