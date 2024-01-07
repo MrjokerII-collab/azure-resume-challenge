@@ -1,6 +1,3 @@
-import logging
-import uuid
-import json
 import os
 import azure.functions as func
 from azure.data.tables import TableServiceClient
