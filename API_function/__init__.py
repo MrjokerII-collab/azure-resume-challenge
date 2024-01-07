@@ -13,9 +13,8 @@ def get_secret():
     credential = DefaultAzureCredential()
     client = SecretClient(vault_url=KVUri, credential=credential)
     secretcreds = "Connectionstringdb"
-    retrieved_secret = client.get_secret(secretcreds)
-    connection_string = retrieved_secret.value
-    return connection_string
+    connection_string = client.get_secret(secretcreds)
+    return connection_string.value
 
 connection_string = get_secret()
 table="Visitors_count"
