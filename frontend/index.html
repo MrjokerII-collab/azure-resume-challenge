@@ -87,7 +87,7 @@
 
             <h2>ABOUT ME</h2>
 
-            <p>Bonjour, je m'appelle Frédéric WISO. Je suis un ingénieur en cybersécurité qui souhaite se spécialiser dans le cloud azure et aws
+            <p>Bonjour, je m'appelle Frédéric WISO. En tant qu'ingénieur en cybersécurité. Mon objectif actuel est de me spécialiser davantage dans les technologies du cloud et de l'automatisation, en particulier sur les plateformes Azure et AWS. Cette monter de compétences se fait par la réalisation de projets et de passage de certifications dans le domaine du cloud.
     
                
          </br>
@@ -95,12 +95,43 @@
        Vous pouvez retrouvrer le code du projet sur mon <span><a href="https://github.com/MrjokerII-collab/azure-resume-challenge">github</a></span>
             
 
-         </div> <!-- end .main-col -->
 
-      </div>
+            <h2>Description du projet</h2>
 
-   </section> <!-- About Section End-->
+            <p>Le projet Azure resume à pour but de me familiariser avec l'environnement Azure dans un contexte de projet et également de montrer mes compétences grâce à ce site web.
+               Ce site web à pour but d'afficher mon cv et les futures projets que je réaliserai. 
+            </br>
+               En plus cela, le site peut comptabiliser le nombre de visiteurs grâce au code javascript et au backend mis en place.
+            </br>
+            </br>
+               Concernant l'infrastructure, le projet se réparti en 3 parties :
+            </br>
+             - La partie <span class="highlight">Frontend</span> : Le code HTML, CSS et Javascript
+            </br>
+             - La partie <span class="highlight">Backend</span> : Blob storage, CDN, l'API Azure function en python et la cosmosdb table
+            </br>
+             - La partie <span class="highlight">CI/CD</span> : Git et Github action
+            </br>
+         </br>
+               Le site web est un site web statique comprenant du <span class="highlight">code HTML, CSS, javascript</span>. Le contenue du site web est stocké dans <span class="highlight">un blob storage</span>. Il est ensuite afficher grâce à <span class="highlight">un CDN</span>.
+         </br>
+               Le but principal du code js est de faire une requête HTTP en direction de <span class="highlight">l'API azure function</span> à chaque fois que quelqu'un visite le site.
+            </br>
+         </br>
+               L'azure function, est une <span class="highlight">fonction serverless codé en python</span> qui se déclenche à la réception d'une rêquete HTTP. La fonction va augmenter le nombre total de visiteur de 1 à chaque visite du site.
+            </br>
+               Le nombre total est stocké dans <span class="highlight">la cosmosdb table</span>.
+               Le code du site et l'azure function sont stockés dans github. Le déploiement des mises à jours de ces éléments se font automatiquement grâce à <span class="highlight">github actions</span>.  
 
+            </br>
+            </br>
+               
+            </div> <!-- end .main-col -->
+
+         </div>
+   
+      </section> <!-- About Section End-->
+   
 
    <!-- Resume Section
    ================================================== -->
