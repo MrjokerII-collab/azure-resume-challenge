@@ -113,12 +113,12 @@
              - La partie <span class="highlight">CI/CD</span> : Git et Github action
             </br>
          </br>
-               Le site web est un site web statique comprenant du <span class="highlight">code HTML, CSS, javascript</span>. Le contenue du site web est stocké dans <span class="highlight">un blob storage</span>. Il est ensuite afficher grâce à <span class="highlight">un CDN</span>.
+               Le site web est un site web statique comprenant du <span class="highlight">code HTML, CSS, javascript</span>. Le contenu du site web est stocké dans <span class="highlight">un blob storage</span>. Il est ensuite affiché grâce à <span class="highlight">un CDN</span>.
          </br>
                Le but principal du code js est de faire une requête HTTP en direction de <span class="highlight">l'API azure function</span> à chaque fois que quelqu'un visite le site.
             </br>
          </br>
-               L'azure function, est une <span class="highlight">fonction serverless codé en python</span> qui se déclenche à la réception d'une rêquete HTTP. La fonction va augmenter le nombre total de visiteur de 1 à chaque visite du site.
+               L'azure function, est une <span class="highlight">fonction serverless codée en python</span> qui se déclenche à la réception d'une requête HTTP. La fonction va augmenter le nombre total de visiteurs de 1 à chaque visite du site.
             </br>
                Le nombre total est stocké dans <span class="highlight">la cosmosdb table</span>.
                Le code du site et l'azure function sont stockés dans github. Le déploiement des mises à jours de ces éléments se font automatiquement grâce à <span class="highlight">github actions</span>.  
